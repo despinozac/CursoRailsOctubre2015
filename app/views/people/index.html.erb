@@ -1,0 +1,34 @@
+<h1>People</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Ci</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.lastname %></td>
+        <td><%= person.birthday %></td>
+        <td><%= person.gender %></td>
+        <td><%= person.ci %></td>
+        <td>
+          <%= link_to "Edit Person", edit_person_path(person) %>
+          <%= link_to "Delete Person", person_path(person), 
+            method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to "Create Person", new_person_path %>

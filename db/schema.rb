@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006234429) do
+ActiveRecord::Schema.define(version: 20151009002912) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "line1"
@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(version: 20151006234429) do
   add_index "addresses", ["person_id"], name: "index_addresses_on_person_id"
 
   create_table "people", force: :cascade do |t|
-    t.string  "name"
-    t.string  "lastname"
-    t.date    "birthday"
-    t.string  "gender"
-    t.integer "ci"
+    t.string   "name"
+    t.string   "lastname"
+    t.date     "birthday"
+    t.string   "gender"
+    t.integer  "ci"
+    t.datetime "created_at"
   end
 
   create_table "profiles", force: :cascade do |t|

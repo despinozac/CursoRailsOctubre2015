@@ -1,0 +1,8 @@
+<%= simple_form_for @person do |f| %>
+  <%= f.input :name %>
+  <%= f.input :lastname %>
+  <%= f.input :birthday, as: :string %>
+  <%= f.input :gender %>
+  <%= f.input :ci %>
+  <%= f.submit %>
+<% end %>
