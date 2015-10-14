@@ -1,3 +1,5 @@
+<h2>Add Address to <%= @address.person.full_name %></h2>
+
 <%= simple_form_for @address, url: add_address_person_path(@address.person) do |f| %>
   <%= f.input :line1 %>
   <%= f.input :line2 %>

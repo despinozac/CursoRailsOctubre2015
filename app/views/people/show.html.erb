@@ -1,0 +1,49 @@
+<h2>Person details:</h2>
+
+<p>
+  <b>Full name: </b>
+  <%= @person.full_name %>
+</p>
+
+<p>
+  <b>Birthday: </b>
+  <%= @person.birthday %>
+</p>
+
+<p>
+  <b>Gender</b>
+  <%= @person.gender %>
+</p>
+
+<p>
+  <b>Ci</b>
+  <%= @person.ci %>
+</p>
+
+<h4>Addresses</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Line1</th>
+      <th>Line2</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Zipcode</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person.addresses.each do |address| %>
+      <tr>
+        <td><%= address.line1 %></td>
+        <td><%= address.line2 %></td>
+        <td><%= address.city %></td>
+        <td><%= address.country %></td>
+        <td><%= address.zipcode %></td>
+        <td><%= link_to "Delete", person_address_path(address.person, address), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

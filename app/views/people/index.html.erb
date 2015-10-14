@@ -20,10 +20,11 @@
         <td><%= person.gender %></td>
         <td><%= person.ci %></td>
         <td>
-          <%= link_to "Add Address", form_address_person_path(person) %>
-          <%= link_to "Edit Person", edit_person_path(person) %>
-          <%= link_to "Delete Person", person_path(person), 
+          <%= link_to "Show", person_path(person) %>
+          <%= link_to "Edit", edit_person_path(person) %>
+          <%= link_to "Delete", person_path(person), 
             method: :delete %>
+          <%= link_to "Add Address", form_address_person_path(person) %>
         </td>
       </tr>
     <% end %>
