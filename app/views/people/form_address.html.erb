@@ -1,0 +1,8 @@
+<%= simple_form_for @address, url: add_address_person_path(@address.person) do |f| %>
+  <%= f.input :line1 %>
+  <%= f.input :line2 %>
+  <%= f.input :city %>
+  <%= f.input :country, as: :string %>
+  <%= f.input :zipcode %>
+  <%= f.submit %>
+<% end %>

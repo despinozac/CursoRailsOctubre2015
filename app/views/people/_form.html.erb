@@ -4,5 +4,13 @@
   <%= f.input :birthday, as: :string %>
   <%= f.input :gender %>
   <%= f.input :ci %>
+  <h3>Address</h3>
+  <%= f.simple_fields_for :addresses do |h| %>
+    <%= h.input :line1 %>
+    <%= h.input :line2 %>
+    <%= h.input :city %>
+    <%= h.input :country, as: :string %>
+    <%= h.input :zipcode %>
+  <% end %>
   <%= f.submit %>
 <% end %>

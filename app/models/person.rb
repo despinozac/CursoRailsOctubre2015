@@ -3,6 +3,8 @@ class Person < ActiveRecord::Base
   has_many :addresses, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  accepts_nested_attributes_for :addresses
+
   validates :name, :lastname, presence: {message: "No debe estar vacio"}
   validates :ci, numericality: {only_integer: true, 
     greater_than: 99999, less_than:35000000}
