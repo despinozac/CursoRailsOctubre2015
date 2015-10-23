@@ -1,0 +1,6 @@
+<%= simple_form_for [@company, @order] do |f| %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :date, as: :string %>
+  <%= f.association :messenger, include_blank: false  %>
+  <%= f.submit %>
+<% end %>

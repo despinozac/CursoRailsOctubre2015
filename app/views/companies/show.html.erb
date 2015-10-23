@@ -11,3 +11,30 @@
 </p>
 
 <%= link_to "Back", companies_path %>
+
+<%= link_to "New order", new_company_order_path(@company) %>
+
+
+<h4>Orders</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Messenger</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.orders.each do |order| %>
+      <tr>
+        <td><%= order.date %></td>
+        <td><%= order.description %></td>
+        <td><%= order.messenger.name %></td>
+        <td><%= link_to "Delete", company_order_path(@company, order), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies
+  resources :companies do
+    resources :orders
+  end
   #get "/people" => "foo#bar"
 end
