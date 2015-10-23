@@ -66,7 +66,7 @@ class PeopleController < ApplicationController
 
   def permit_params
     params.require(:person).permit(:name, :lastname, :birthday, :gender, :ci, 
-      addresses_attributes: [:line1, :line2, :city, :country, :zipcode])
+      addresses_attributes: [:id, :line1, :line2, :city, :country, :zipcode])
   end
 
   def permit_params_address
