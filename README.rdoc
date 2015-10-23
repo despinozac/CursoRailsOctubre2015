@@ -26,3 +26,10 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Links de consulta:
+* http://ruby-doc.org/core-2.1.5/
+* http://guides.rubyonrails.org/v4.1.7/
+* http://api.rubyonrails.org/v4.1.7/
+* https://github.com/bbatsov/ruby-style-guide
+* https://github.com/bbatsov/rails-style-guide
