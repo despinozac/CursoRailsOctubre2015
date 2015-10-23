@@ -5,4 +5,15 @@ class Order < ActiveRecord::Base
   #    indicarle cual es el nombre de la foreign_key por donde Rails va a realizar el query y cual es el nombre
   #    de la clase a quien nos estamos refiriendo.
   belongs_to :messenger, foreign_key: "person_id", class_name: "Person"
+
+  validates :description, :date, :messenger, presence: true
+  validate :check_date
+
+
+  private
+  def check_date
+    unless date >= Date.today
+      errors.add(:date, "Debe ser mayor o igual a la fecha actual.")
+    end
+  end
 end
