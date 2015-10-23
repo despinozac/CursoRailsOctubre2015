@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @messengers = @company.messengers.distinct
   end
 
   def new

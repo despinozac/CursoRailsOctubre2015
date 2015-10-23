@@ -6,6 +6,8 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+    @companies = @person.companies.distinct
+    @orders = @person.orders.order(date: :desc)
   end
   
   def new

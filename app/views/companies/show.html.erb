@@ -28,12 +28,35 @@
   </thead>
 
   <tbody>
-    <% @company.orders.each do |order| %>
+    <% @company.orders.order(:person_id).each do |order| %>
       <tr>
         <td><%= order.date %></td>
         <td><%= order.description %></td>
         <td><%= order.messenger.name %></td>
         <td><%= link_to "Delete", company_order_path(@company, order), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h4>Messenger</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>C.I.</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messengers.each do |messenger| %>
+      <tr>
+        <td><%= link_to(messenger.name, person_path(messenger)) %></td>
+        <td><%= messenger.lastname %></td>
+        <td><%= messenger.ci %></td>
       </tr>
     <% end %>
   </tbody>

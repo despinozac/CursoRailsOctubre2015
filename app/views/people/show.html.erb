@@ -47,3 +47,47 @@
     <% end %>
   </tbody>
 </table>
+
+<h4>Companies</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rif</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.rif %></td>
+        <td><%= link_to "Show", company_path(company) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h4>Orders</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Description</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.company.name %></td>
+        <td><%= order.description %></td>
+        <td><%= order.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
